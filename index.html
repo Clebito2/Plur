@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Nova PLUR: O Ecossistema de Movimento e Acolhimento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Variáveis de Cores e Fontes da Live Consultoria */
+        :root {
+            --azul-petroleo: #06192a;
+            --verde-vibrante: #00e800;
+            --cinza-claro: #f4f4f4;
+            --branco: #ffffff;
+            --font-primaria: 'Poppins', sans-serif;
+            --font-secundaria: 'Merriweather', serif;
+        }
+
+        /* Estilos Globais do Body */
+        body {
+            font-family: var(--font-primaria);
+            background-color: var(--azul-petroleo);
+            color: var(--cinza-claro);
+            background-image: radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.05), transparent 50%);
+        }
+
+        /* Estilos para Títulos */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primaria);
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilos para Textos Comuns */
+        p, li, span, td, th, div {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Cor Verde Vibrante da Marca */
+        .text-brand-green {
+            color: var(--verde-vibrante);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Fundo Escuro da Marca */
+        .bg-brand-dark {
+            background-color: var(--azul-petroleo);
+        }
+
+        /* Fonte Secundária */
+        .font-brand-secondary {
+            font-family: var(--font-secundaria);
+        }
+
+        /* Gradiente para Seção Hero */
+        .hero-gradient {
+            background: linear-gradient(rgba(6, 25, 42, 0.85), rgba(6, 25, 42, 1)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+        }
+
+        /* Padrão de Fundo para Seções */
+        .section-bg-pattern {
+            background-color: #111827;
+            background-image: radial-gradient(rgba(200, 200, 200, 0.05) 1px, transparent 1px);
+            background-size: 15px 15px;
+        }
+
+        /* Animação de Fade In */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Estilos para botões */
+        .btn-brand {
+            background-color: var(--verde-vibrante);
+            color: var(--azul-petroleo);
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-shadow: none;
+        }
+        .btn-brand:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 232, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark">
+    <!-- CABEÇALHO -->
+    <header class="py-6 px-4 sm:px-8 md:px-16 fixed top-0 left-0 right-0 z-50 bg-brand-dark bg-opacity-80 backdrop-blur-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo live oficial-36.png" alt="Logo Live Liderança & Vendas" class="h-12">
+                <!-- PLUR Logo - Corrigido para carregar diretamente do novo caminho RAW -->
+                <img src="https://github.com/Clebito2/Consultorias/blob/main/PLUR%20Movimento-03.png" alt="Logo PLUR Movimento" class="h-12 bg-transparent">
+            </div>
+            <p id="header-client-name" class="hidden md:block text-right text-gray-300">Apresentação para Sócios: PLUR Movimento</p>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- SEÇÃO HERO - Título da Apresentação -->
+        <section class="hero-gradient py-24 md:py-32 text-center text-white">
+            <div class="container mx-auto px-4 fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    A Nova PLUR: <br class="hidden md:block"> O Ecossistema de <span class="text-brand-green">Movimento e Acolhimento</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-300">Um lugar para quem já se encontra no movimento e quem ainda nem começou.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTEXTO PLUR -->
+        <section class="py-16 md:py-24 bg-brand-dark">
+            <div class="container mx-auto px-4 md:px-16 fade-in">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">1. Contexto: Quem é a PLUR?</h2>
+                    <p class="mt-2 text-gray-400">Uma história de 10 anos construindo uma tribo única.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-gray-900/50 p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed font-brand-secondary italic border-l-4 border-brand-green">
+                    <p>A PLUR Movimento tem uma década de existência, nadando contra a corrente do mercado fitness industrializado. Desde o início, defendemos o cuidado, a liberdade, a consciência e o prazer no movimento, criando um trabalho consolidado com pessoas que não se identificam com o ambiente de academia convencional.</p>
+                    <p class="mt-4">Somos percebidos no mercado como um refúgio para quem busca movimento, funcionalidade e bem-estar, com uma abordagem não competitiva e acolhedora. Nossa história é de acolhimento e transformação, ajudando pessoas a encontrar propósito no exercício físico e a superar barreiras, desde o primeiro passo até a evolução em seus esportes favoritos. Como dizemos: "Por trás de um grande corpo, uma mente muito maior."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO NOSSO DIFERENCIAL -->
+        <section class="py-16 md:py-24 section-bg-pattern">
+            <div class="container mx-auto px-4 md:px-16 fade-in">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">2. Nosso Grande Diferencial</h2>
+                    <p class="mt-2 text-gray-400">Muito além de uma academia: um ecossistema de movimento com propósito.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-gray-900/50 p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-green mb-4">Acolhimento e Propósito</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><b>Refúgio para iniciantes:</b> Um lugar seguro para o corpo se expressar sem julgamento.</li>
+                                <li><b>Treino com intenção:</b> Foco no "porquê" e "como" treinar, com metodologia própria.</li>
+                                <li><b>Marcos afetivos:</b> Celebração de conquistas emocionais ("primeira vez que terminei um treino", "voltei depois de parar").</li>
+                                <li><b>Essência da Marca:</b> "Menos maca. Mais movimento. Menos pressa. Mais escuta. Menos obrigação. Mais sentido."</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-green mb-4">Inteligência Artificial Humanizada</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><b>Feedback constante:</b> Mensagens personalizadas e check-ins de bem-estar via WhatsApp/App.</li>
+                                <li><b>Treinos direcionados:</b> Sugestões adaptativas para iniciantes e entusiastas.</li>
+                                <li><b>Conquistas emocionais:</b> IA que celebra a jornada, não só a performance física.</li>
+                            </ul>
+                        </div>
+                        <div class="md:col-span-2">
+                            <h3 class="text-2xl font-bold text-brand-green mb-4">Abordagem Multidisciplinar Integrada</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><b>PLUR30:</b> Programa de 30 dias que une ciência, acolhimento e transformação, com acompanhamento nutricional, parceria com psicóloga (rodas de conversa), orientações de autocuidado (dermatologistas, terapeutas corporais) e suporte emocional.</li>
+                                <li><b>ALT Running Club:</b> Corrida para quem não se encaixa no padrão, focada em liberdade, prazer e pertencimento. Eventos semanais e mensais com DJs, café e cultura. "Correr aqui não é performar, é pertencer."</li>
+                                <li><b>Saúde completa:</b> Treinos guiados, nutrição, fisioterapia, avaliação funcional de movimento integrados.</li>
+                                <li><b>Parcerias estratégicas:</b> Conexão com centros psicoterapêuticos e psicólogos para indicação de pacientes em um ambiente seguro e acolhedor.</li>
+                                <li><b>Comunidade e cultura:</b> Ambiente leve, sem julgamentos, onde todos se sentem parte de uma tribo. PLUR não é moda, é raiz.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO A NOVA PLUR: O ECOSSISTEMA -->
+        <section class="py-16 md:py-24 bg-brand-dark">
+            <div class="container mx-auto px-4 md:px-16 fade-in">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">3. A Nova PLUR: O Ecossistema de Movimento</h2>
+                    <p class="mt-2 text-gray-400">Nossa proposta para o futuro: do zero ao infinito.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-gray-900/50 p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed font-brand-secondary italic border-l-4 border-brand-green">
+                    <p class="mb-4">Transformaremos a PLUR no primeiro ecossistema urbano de saúde, movimento e acolhimento assistido por IA. Um espaço onde qualquer pessoa — sedentária, iniciante, entusiasta ou atleta — se encontra, evolui e pertence.</p>
+                    <p class="mb-4 font-bold text-brand-green text-center text-2xl">Nosso Mantra:</p>
+                    <p class="mb-4 font-bold text-brand-green text-center text-2xl">"Na PLUR você começa de onde está. Com o corpo que tem. E vai até onde quiser."</p>
+                    <h3 class="text-2xl font-bold text-brand-green mb-4">Nossos Produtos e Iniciativas:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><b>PLUR30:</b> Treinos com pegada estética e funcionalidade direcionada, assistidos por IA.</li>
+                        <li><b>ALT Running Club:</b> Clube de corrida inclusivo, com "rolês" e eventos para todos os níveis.</li>
+                        <li><b>Sessões "Comece Aqui":</b> Grupo de boas-vindas com treino, acolhimento e roda de conversa para iniciantes.</li>
+                        <li><b>PLUR Talks:</b> Microeventos internos com histórias reais de superação e performance.</li>
+                        <li><b>Mentoria de aluno para aluno:</b> Conexão real entre membros mais avançados e iniciantes.</li>
+                        <li><b>Integração com Fisioterapia e Nutrição:</b> Avaliação funcional de movimento e acompanhamento multidisciplinar.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO INVESTIMENTOS NECESSÁRIOS -->
+        <section class="py-16 md:py-24 section-bg-pattern">
+            <div class="container mx-auto px-4 md:px-16 fade-in">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">4. Investimentos Necessários</h2>
+                    <p class="mt-2 text-gray-400">O que será construído para o renascimento da PLUR.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-gray-900/50 p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-green mb-2">Nova Estrutura Física:</h3>
+                            <ul class="list-disc list-inside">
+                                <li><b>Piso Superior:</b> Nova área de musculação e treinamentos específicos para esportes (futevôlei, skate, etc.).</li>
+                                <li><b>Piso Inferior:</b> Parte ergométrica para o CrossFit.</li>
+                                <li><b>Novos Banheiros:</b> Modernos e inclusivos.</li>
+                                <li><b>Lanchonete e Área de Convivência:</b> Espaço para integração e bem-estar.</li>
+                                <li><b>Reforma Estética:</b> Melhorias no ambiente geral, mantendo a estrutura existente que é muito boa.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-green mb-2">Estimativa de Custos para Construção:</h3>
+                            <ul class="list-disc list-inside">
+                                <li><b>Musculação (Piso Superior):</b> R$ 70.000 (usado) - R$ 130.000 (novo)</li>
+                                <li><b>Ergométrica (Piso Inferior):</b> R$ 60.000</li>
+                                <li><b>Banheiros:</b> R$ 60.000</li>
+                                <li><b>Reforma Estética:</b> R$ 40.000</li>
+                                <li><b>Total Estimado para Estrutura (cenário econômico):</b> R$ 170.000</li>
+                                <li><b>Total Estimado para Estrutura (cenário premium):</b> R$ 290.000</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-green mb-2">Investimento em Marketing e Eventos:</h3>
+                            <ul class="list-disc list-inside">
+                                <li>Campanhas internas (gerando descontos e engajamento).</li>
+                                <li>Marketing digital (explorando depoimentos e prova social).</li>
+                                <li>Eventos e participação em clubes (ALT Running Club, etc.).</li>
+                            </ul>
+                            <p class="mt-2 italic">"Não começamos ganhando dinheiro, começamos investindo nesse movimento."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO ESTRUTURA DE CAPTAÇÃO -->
+        <section class="py-16 md:py-24 bg-brand-dark">
+            <div class="container mx-auto px-4 md:px-16 fade-in">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">5. Estrutura de Captação e Valuation</h2>
+                    <p class="mt-2 text-gray-400">A base financeira para o nosso crescimento exponencial.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-gray-900/50 p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-green mb-4">Valuation Atual (2024):</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li>Receita total real: R$ 335.348,36</li>
+                                <li>Passivo total assumido: R$ 239.768,66</li>
+                                <li>Valuation líquido: <span class="font-bold">R$ 430.928,06</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-green mb-4">Proposta de Entrada de Sócios Cotistas:</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li>Venda de 40% das quotas sociais: <span class="font-bold">R$ 172.371,22</span></li>
+                                <li><b>Aporte previsto de dois sócios cotistas:</b> Aproximadamente R$ 70.000,00 cada (Total: R$ 140.000,00).</li>
+                                <li><b>Investimento a ser captado via Fomento:</b> A diferença entre o investimento total necessário e os aportes dos sócios cotistas será buscada via FCO, Go Fomento e outras estruturas de financiamento governamentais (estaduais e federais) para este tipo de investimento.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO O AMPARO DA LIVE CONSULTORIA -->
+        <section class="py-16 md:py-24 section-bg-pattern">
+            <div class="container mx-auto px-4 md:px-16 fade-in">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">6. O Amparo e Colaboração da Live Consultoria</h2>
+                    <p class="mt-2 text-gray-400">Segurança e expertise para o seu investimento em todos os setores.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-gray-900/50 p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed font-brand-secondary italic border-l-4 border-brand-green">
+                    <p>A Live Consultoria, com sua vasta experiência em planejamento e estruturação de negócios, atuará de forma colaborativa e estratégica em <b>todos os setores da PLUR</b>, garantindo o embasamento e a segurança necessários para o sucesso do projeto. Nosso amparo abrange:</p>
+                    <ul class="list-disc list-inside mt-4">
+                        <li><b>Fluxo e Operações:</b> Otimização e padronização de processos em todas as áreas (financeiro, atendimento, vendas, etc.).</li>
+                        <li><b>Gestão Financeira:</b> Estruturação completa, controle de fluxo de caixa, precificação, e busca por fontes de fomento (FCO, Go Fomento, etc.).</li>
+                        <li><b>Estratégia e Marketing:</b> Direcionamento para o posicionamento de marca, campanhas internas e digitais, e gestão de eventos.</li>
+                        <li><b>Liderança e Pessoas:</b> Desenvolvimento da equipe, mentoria para os líderes e estruturação de perfis de acesso.</li>
+                        <li><b>Tecnologia e Inovação:</b> Apoio na implementação de sistemas (ERP/CRM), desenvolvimento de aplicativos e integração de IA.</li>
+                    </ul>
+                    <p class="mt-4">Com a Live ao seu lado, a PLUR terá um parceiro experiente e dedicado para guiar cada passo da transformação, elevando o padrão de gestão e performance em todas as frentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO PRÓXIMOS PASSOS / CTA -->
+        <section class="cta-gradient py-24 text-center">
+            <div class="container mx-auto px-4 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold">Pronto para Construir o Futuro?</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-300">Este é o momento de fazer parte de um movimento que transformará vidas e o cenário de saúde em Goiânia.</p>
+                <div class="mt-8">
+                    <a href="mailto:luizportal@live.com.br?subject=Interesse na Proposta de Sócio - PLUR Movimento" id="cta-button" class="btn-brand inline-block rounded-lg py-4 px-10 text-lg uppercase tracking-wider">Vamos Conversar</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-8 text-center text-gray-500">
+            <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo live oficial-34.png" alt="Logo Live" class="h-20 mx-auto mb-8">
+            <p>Live Liderança & Vendas</p>
+            <p class="text-sm">Alta performance começa com atitude.</p>
+            <p class="text-sm mt-2" id="footer-contact">Telefone: (62) 98400-2840 | E-mail: luizportal@live.com.br</p>
+        </div>
+    </footer>
+</body>
+</html>
