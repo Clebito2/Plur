@@ -68,6 +68,42 @@
             background-size: 15px 15px;
         }
 
+        /* NOVO: Classe para adicionar logo PLUR como fundo com transparência */
+        .plur-bg-watermark {
+            position: relative;
+        }
+
+        .plur-bg-watermark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('PLUR Movimento-03.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 300px auto; /* Ajuste o tamanho conforme necessário */
+            opacity: 0.08; /* Transparência bem sutil */
+            pointer-events: none; /* Para não interferir com cliques */
+            z-index: 1;
+        }
+
+        .plur-bg-watermark > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Variação para seções com fundo escuro - logo um pouco mais visível */
+        .plur-bg-watermark-dark::before {
+            opacity: 0.12;
+        }
+
+        /* Variação para seções com padrão - logo ainda mais sutil */
+        .plur-bg-watermark-pattern::before {
+            opacity: 0.06;
+        }
+
         /* Animação de Fade In */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -106,7 +142,7 @@
 
     <main class="pt-24">
         <!-- SEÇÃO HERO - Título da Apresentação -->
-        <section class="hero-gradient py-24 md:py-32 text-center text-white">
+        <section class="hero-gradient py-24 md:py-32 text-center text-white plur-bg-watermark">
             <div class="container mx-auto px-4 fade-in">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight">
                     A Nova PLUR: <br class="hidden md:block"> O Ecossistema de <span class="text-brand-green">Movimento e Acolhimento</span>
@@ -116,7 +152,7 @@
         </section>
 
         <!-- SEÇÃO CONTEXTO PLUR -->
-        <section class="py-16 md:py-24 bg-brand-dark">
+        <section class="py-16 md:py-24 bg-brand-dark plur-bg-watermark plur-bg-watermark-dark">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold">1. Contexto: Quem é a PLUR?</h2>
@@ -130,7 +166,7 @@
         </section>
 
         <!-- SEÇÃO NOSSO DIFERENCIAL -->
-        <section class="py-16 md:py-24 section-bg-pattern">
+        <section class="py-16 md:py-24 section-bg-pattern plur-bg-watermark plur-bg-watermark-pattern">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold">2. Nosso Grande Diferencial</h2>
@@ -171,7 +207,7 @@
         </section>
 
         <!-- SEÇÃO A NOVA PLUR: O ECOSSISTEMA -->
-        <section class="py-16 md:py-24 bg-brand-dark">
+        <section class="py-16 md:py-24 bg-brand-dark plur-bg-watermark plur-bg-watermark-dark">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold">3. A Nova PLUR: O Ecossistema de Movimento</h2>
@@ -195,7 +231,7 @@
         </section>
 
         <!-- SEÇÃO INVESTIMENTOS NECESSÁRIOS -->
-        <section class="py-16 md:py-24 section-bg-pattern">
+        <section class="py-16 md:py-24 section-bg-pattern plur-bg-watermark plur-bg-watermark-pattern">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold">4. Investimentos Necessários</h2>
@@ -216,12 +252,12 @@
                         <div>
                             <h3 class="text-2xl font-bold text-brand-green mb-2">Estimativa de Custos para Construção:</h3>
                             <ul class="list-disc list-inside">
-                                <li><b>Musculação (Piso Superior):</b> R$ 70.000 (usado) - R$ 130.000 (novo)</li>
-                                <li><b>Ergométrica (Piso Inferior):</b> R$ 60.000</li>
-                                <li><b>Banheiros:</b> R$ 60.000</li>
-                                <li><b>Reforma Estética:</b> R$ 40.000</li>
-                                <li><b>Total Estimado para Estrutura (cenário econômico):</b> R$ 170.000</li>
-                                <li><b>Total Estimado para Estrutura (cenário premium):</b> R$ 290.000</li>
+                                <li><b>Musculação (Piso Superior):</b> R\$ 70.000 (usado) - R\$ 130.000 (novo)</li>
+                                <li><b>Ergométrica (Piso Inferior):</b> R\$ 60.000</li>
+                                <li><b>Banheiros:</b> R\$ 60.000</li>
+                                <li><b>Reforma Estética:</b> R\$ 40.000</li>
+                                <li><b>Total Estimado para Estrutura (cenário econômico):</b> R\$ 170.000</li>
+                                <li><b>Total Estimado para Estrutura (cenário premium):</b> R\$ 290.000</li>
                             </ul>
                         </div>
                         <div>
@@ -239,7 +275,7 @@
         </section>
 
         <!-- SEÇÃO ESTRUTURA DE CAPTAÇÃO -->
-        <section class="py-16 md:py-24 bg-brand-dark">
+        <section class="py-16 md:py-24 bg-brand-dark plur-bg-watermark plur-bg-watermark-dark">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold">5. Estrutura de Captação e Valuation</h2>
@@ -250,16 +286,16 @@
                         <div>
                             <h3 class="text-2xl font-bold text-brand-green mb-4">Valuation Atual (2024):</h3>
                             <ul class="list-disc list-inside space-y-2">
-                                <li>Receita total real: R$ 335.348,36</li>
-                                <li>Passivo total assumido: R$ 239.768,66</li>
-                                <li>Valuation líquido: <span class="font-bold">R$ 430.928,06</span></li>
+                                <li>Receita total real: R\$ 335.348,36</li>
+                                <li>Passivo total assumido: R\$ 239.768,66</li>
+                                <li>Valuation líquido: <span class="font-bold">R\$ 430.928,06</span></li>
                             </ul>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-brand-green mb-4">Proposta de Entrada de Sócios Cotistas:</h3>
                             <ul class="list-disc list-inside space-y-2">
-                                <li>Venda de 40% das quotas sociais: <span class="font-bold">R$ 172.371,22</span></li>
-                                <li><b>Aporte previsto de dois sócios cotistas:</b> Aproximadamente R$ 70.000,00 cada (Total: R$ 140.000,00).</li>
+                                <li>Venda de 40% das quotas sociais: <span class="font-bold">R\$ 172.371,22</span></li>
+                                <li><b>Aporte previsto de dois sócios cotistas:</b> Aproximadamente R\$ 70.000,00 cada (Total: R\$ 140.000,00).</li>
                                 <li><b>Investimento a ser captado via Fomento:</b> A diferença entre o investimento total necessário e os aportes dos sócios cotistas será buscada via FCO, Go Fomento e outras estruturas de financiamento governamentais (estaduais e federais) para este tipo de investimento.</li>
                             </ul>
                         </div>
@@ -269,7 +305,7 @@
         </section>
 
         <!-- SEÇÃO O AMPARO DA LIVE CONSULTORIA -->
-        <section class="py-16 md:py-24 section-bg-pattern">
+        <section class="py-16 md:py-24 section-bg-pattern plur-bg-watermark plur-bg-watermark-pattern">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold">6. O Amparo e Colaboração da Live Consultoria</h2>
@@ -290,7 +326,7 @@
         </section>
 
         <!-- SEÇÃO PRÓXIMOS PASSOS / CTA -->
-        <section class="cta-gradient py-24 text-center">
+        <section class="cta-gradient py-24 text-center plur-bg-watermark">
             <div class="container mx-auto px-4 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold">Pronto para Construir o Futuro?</h2>
                 <p class="mt-4 max-w-2xl mx-auto text-gray-300">Este é o momento de fazer parte de um movimento que transformará vidas e o cenário de saúde em Goiânia.</p>
@@ -307,7 +343,7 @@
             <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo live oficial-34.png" alt="Logo Live" class="h-20 mx-auto mb-8">
             <p>Live Liderança & Vendas</p>
             <p class="text-sm">Alta performance começa com atitude.</p>
-            <p class="text-sm mt-2" id="footer-contact">Telefone: (62) 98400-2840 | E-mail: luizportal@live.com.br</p>
+            <p class="text-sm mt-2" id="footer-contact">Telefone: (62) 98400-2840 | E-mail: luizportal@ecossistemalive.com.br</p>
         </div>
     </footer>
 </body>
