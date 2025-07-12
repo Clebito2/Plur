@@ -25,7 +25,7 @@
             background-color: var(--azul-petroleo);
             color: var(--cinza-claro);
             /* Textura PLUR como fundo repetido */
-            background-image: 
+            background-image:
                 radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.05), transparent 50%),
                 url('https://raw.githubusercontent.com/Clebito2/Plur/main/PLUR%20Movimento-06.png');
             background-repeat: no-repeat, repeat;
@@ -93,6 +93,7 @@
             background-color: rgba(17, 24, 39, 0.95) !important;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
         }
 
         /* Animação de Fade In */
@@ -117,27 +118,85 @@
             box-shadow: 0 10px 20px rgba(0, 232, 0, 0.2);
         }
 
-        /* Header com melhor contraste */
-        header {
+        /* Header e Footer com melhor contraste */
+        header, footer {
             background-color: rgba(6, 25, 42, 0.95) !important;
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Footer com melhor contraste */
         footer {
-            background-color: rgba(0, 0, 0, 0.95) !important;
-            backdrop-filter: blur(15px);
+            border-bottom: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
+        /* Estilos para o Accordion/Details */
+        details > summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            transition: background-color 0.2s ease;
+        }
+        details > summary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .accordion-arrow {
+            transition: transform 0.3s ease;
+            color: var(--verde-vibrante);
+        }
+        details[open] .accordion-arrow {
+            transform: rotate(90deg);
+        }
+        .accordion-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+        
+        /* Estilos para a tabela de investimento */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        th {
+            background-color: rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--cinza-claro);
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .premium-column {
+            background-color: rgba(0, 232, 0, 0.05);
+            border-left: 4px solid var(--verde-vibrante);
+        }
+        .total-row {
+            background-color: rgba(0, 232, 0, 0.1);
+            font-weight: 700;
+        }
+        .total-row td {
+            color: var(--verde-vibrante);
+            font-size: 1.125rem;
+        }
+
     </style>
 </head>
 <body class="bg-brand-dark">
     <!-- CABEÇALHO -->
-    <header class="py-6 px-4 sm:px-8 md:px-16 fixed top-0 left-0 right-0 z-50 bg-brand-dark bg-opacity-80 backdrop-blur-sm">
+    <header class="py-6 px-4 sm:px-8 md:px-16 fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-4">
                 <img src="https://raw.githubusercontent.com/Clebito2/layout/main/Logo live oficial-36.png" alt="Logo Live Liderança & Vendas" class="h-12">
-                <!-- PLUR Logo -->
                 <img src="https://raw.githubusercontent.com/Clebito2/Plur/main/PLUR%20Movimento-03.png" alt="Logo PLUR Movimento" class="h-12 bg-transparent">
             </div>
             <p id="header-client-name" class="hidden md:block text-right text-gray-300">Apresentação para Sócios: PLUR Movimento</p>
@@ -155,54 +214,75 @@
             </div>
         </section>
 
-        <!-- SEÇÃO CONTEXTO PLUR -->
+        <!-- SEÇÃO CONTEXTO PLUR E O FUNDADOR -->
         <section class="py-16 md:py-24 bg-brand-dark">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">1. Contexto: Quem é a PLUR?</h2>
-                    <p class="mt-2 text-gray-400">Uma história de 10 anos construindo uma tribo única.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold">1. A Essência da PLUR</h2>
+                    <p class="mt-2 text-gray-400">Uma filosofia de movimento com alma, liderada por uma visão única.</p>
                 </div>
                 <div class="max-w-3xl mx-auto content-box p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed font-brand-secondary italic border-l-4 border-brand-green">
-                    <p>A PLUR Movimento tem uma década de existência, nadando contra a corrente do mercado fitness industrializado. Desde o início, defendemos o cuidado, a liberdade, a consciência e o prazer no movimento, criando um trabalho consolidado com pessoas que não se identificam com o ambiente de academia convencional.</p>
-                    <p class="mt-4">Somos percebidos no mercado como um refúgio para quem busca movimento, funcionalidade e bem-estar, com uma abordagem não competitiva e acolhedora. Nossa história é de acolhimento e transformação, ajudando pessoas a encontrar propósito no exercício físico e a superar barreiras, desde o primeiro passo até a evolução em seus esportes favoritos. Como dizemos: "Por trás de um grande corpo, uma mente muito maior."</p>
+                    <h3 class="text-2xl font-bold text-white font-sans not-italic mb-4">A Mente por Trás do Corpo: Theo Abdalla</h3>
+                    <p class="mb-4">"Por trás de um grande corpo, uma mente muito maior." Esta frase na parede da PLUR não é um slogan, mas a filosofia que guia nosso fundador, Theo Abdalla. Ele entendeu que a jornada do movimento é sobre começar como for possível, no tempo de cada um. A PLUR não é um box, mas um espaço onde corpo, mente e história caminham juntos.</p>
+                    <h3 class="text-2xl font-bold text-white font-sans not-italic mt-6 mb-4">Nossa Verdade</h3>
+                    <p>Enquanto o mercado vendia corpos esculturais a qualquer custo, nós defendíamos o cuidado, a liberdade e a consciência. Não nos adaptamos a uma tendência; o mercado começa a se adaptar a nós. Somos um centro de educação corporal, um espaço seguro e uma comunidade que sustenta o aluno a longo prazo. PLUR não é moda, é raiz.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO NOSSO DIFERENCIAL -->
+        <!-- SEÇÃO PRODUTOS E DIFERENCIAIS -->
         <section class="py-16 md:py-24 section-bg-pattern">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">2. Nosso Grande Diferencial</h2>
-                    <p class="mt-2 text-gray-400">Muito além de uma academia: um ecossistema de movimento com propósito.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold">2. Nossos Produtos: Prova de Conceito</h2>
+                    <p class="mt-2 text-gray-400">Iniciativas de sucesso que validam nosso modelo de negócio e geram resultados reais.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="content-box p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-brand-green mb-4">PLUR30</h3>
+                        <p class="mb-4">Muito mais que um projeto de 30 dias, é um mergulho na nossa filosofia. Unimos ciência, acolhimento e transformação com uma abordagem multidisciplinar: nutrição, psicologia e treinos com propósito.</p>
+                        <p class="font-bold">Resultado Notável: <span class="text-white">Amanda Daher perdeu 8% de gordura e ganhou 6,6kg de massa magra em uma edição, provando a eficácia do método.</span></p>
+                    </div>
+                    <div class="content-box p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-brand-green mb-4">ALT Running Club</h3>
+                        <p class="mb-4">Um clube de corrida para quem não se encaixa no padrão. Focamos em pertencimento, prazer e cultura, com corridas semanais e eventos mensais itinerantes com DJs e parceiros locais.</p>
+                        <p class="font-bold">Nosso Lema: <span class="text-white">"Correr aqui não é performar, é pertencer."</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO PROVA SOCIAL E VALOR -->
+        <section class="py-16 md:py-24 bg-brand-dark">
+            <div class="container mx-auto px-4 md:px-16 fade-in">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">3. Prova Social e Justificativas de Valor</h2>
+                    <p class="mt-2 text-gray-400">Os ativos intangíveis que fortalecem nosso valuation.</p>
                 </div>
                 <div class="max-w-4xl mx-auto content-box p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                            <h3 class="text-2xl font-bold text-brand-green mb-4">Acolhimento e Propósito</h3>
+                            <h3 class="text-2xl font-bold text-brand-green mb-4">Marca e Posicionamento</h3>
                             <ul class="list-disc list-inside space-y-2">
-                                <li><b>Refúgio para iniciantes:</b> Um lugar seguro para o corpo se expressar sem julgamento.</li>
-                                <li><b>Treino com intenção:</b> Foco no "porquê" e "como" treinar, com metodologia própria.</li>
-                                <li><b>Marcos afetivos:</b> Celebração de conquistas emocionais ("primeira vez que terminei um treino", "voltei depois de parar").</li>
-                                <li><b>Essência da Marca:</b> "Menos maca. Mais movimento. Menos pressa. Mais escuta. Menos obrigação. Mais sentido."</li>
+                                <li>Referência em movimento consciente e funcional.</li>
+                                <li>Atrai um público que rejeita academias tradicionais.</li>
+                                <li>Forte apelo com mulheres de 25 a 40 anos, classe A/B.</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-brand-green mb-4">Inteligência Artificial Humanizada</h3>
+                            <h3 class="text-2xl font-bold text-brand-green mb-4">Histórico e Influência</h3>
                             <ul class="list-disc list-inside space-y-2">
-                                <li><b>Feedback constante:</b> Mensagens personalizadas e check-ins de bem-estar via WhatsApp/App.</li>
-                                <li><b>Treinos direcionados:</b> Sugestões adaptativas para iniciantes e entusiastas.</li>
-                                <li><b>Conquistas emocionais:</b> IA que celebra a jornada, não só a performance física.</li>
+                                <li>Mais de 9 anos de experiência e liderança no cenário local.</li>
+                                <li>Recomendações orgânicas e parcerias consolidadas.</li>
+                                <li>Alta taxa de fidelização e retenção de alunos.</li>
                             </ul>
                         </div>
                         <div class="md:col-span-2">
-                            <h3 class="text-2xl font-bold text-brand-green mb-4">Abordagem Multidisciplinar Integrada</h3>
-                            <ul class="list-disc list-inside space-y-2">
-                                <li><b>PLUR30:</b> Programa de 30 dias que une ciência, acolhimento e transformação, com acompanhamento nutricional, parceria com psicóloga (rodas de conversa), orientações de autocuidado (dermatologistas, terapeutas corporais) e suporte emocional.</li>
-                                <li><b>ALT Running Club:</b> Corrida para quem não se encaixa no padrão, focada em liberdade, prazer e pertencimento. Eventos semanais e mensais com DJs, café e cultura. "Correr aqui não é performar, é pertencer."</li>
-                                <li><b>Saúde completa:</b> Treinos guiados, nutrição, fisioterapia, avaliação funcional de movimento integrados.</li>
-                                <li><b>Parcerias estratégicas:</b> Conexão com centros psicoterapêuticos e psicólogos para indicação de pacientes em um ambiente seguro e acolhedor.</li>
-                                <li><b>Comunidade e cultura:</b> Ambiente leve, sem julgamentos, onde todos se sentem parte de uma tribo. PLUR não é moda, é raiz.</li>
+                            <h3 class="text-2xl font-bold text-brand-green mb-4">Potencial de Crescimento</h3>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li>Com a formalização e gestão profissional, o faturamento pode ser multiplicado.</li>
+                                <li>Potencial para criar linha de produtos, programas online e licenciamento.</li>
+                                <li>Base de 2 mil cadastros prontos para serem qualificados e ativados.</li>
                             </ul>
                         </div>
                     </div>
@@ -210,119 +290,145 @@
             </div>
         </section>
 
-        <!-- SEÇÃO A NOVA PLUR: O ECOSSISTEMA -->
-        <section class="py-16 md:py-24 bg-brand-dark">
-            <div class="container mx-auto px-4 md:px-16 fade-in">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">3. A Nova PLUR: O Ecossistema de Movimento</h2>
-                    <p class="mt-2 text-gray-400">Nossa proposta para o futuro: do zero ao infinito.</p>
-                </div>
-                <div class="max-w-4xl mx-auto content-box p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed font-brand-secondary italic border-l-4 border-brand-green">
-                    <p class="mb-4">Transformaremos a PLUR no primeiro ecossistema urbano de saúde, movimento e acolhimento assistido por IA. Um espaço onde qualquer pessoa — sedentária, iniciante, entusiasta ou atleta — se encontra, evolui e pertence.</p>
-                    <p class="mb-4 font-bold text-brand-green text-center text-2xl">Nosso Mantra:</p>
-                    <p class="mb-4 font-bold text-brand-green text-center text-2xl">"Na PLUR você começa de onde está. Com o corpo que tem. E vai até onde quiser."</p>
-                    <h3 class="text-2xl font-bold text-brand-green mb-4">Nossos Produtos e Iniciativas:</h3>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li><b>PLUR30:</b> Treinos com pegada estética e funcionalidade direcionada, assistidos por IA.</li>
-                        <li><b>ALT Running Club:</b> Clube de corrida inclusivo, com "rolês" e eventos para todos os níveis.</li>
-                        <li><b>Sessões "Comece Aqui":</b> Grupo de boas-vindas com treino, acolhimento e roda de conversa para iniciantes.</li>
-                        <li><b>PLUR Talks:</b> Microeventos internos com histórias reais de superação e performance.</li>
-                        <li><b>Mentoria de aluno para aluno:</b> Conexão real entre membros mais avançados e iniciantes.</li>
-                        <li><b>Integração com Fisioterapia e Nutrição:</b> Avaliação funcional de movimento e acompanhamento multidisciplinar.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO INVESTIMENTOS NECESSÁRIOS -->
+        <!-- SEÇÃO ESTRUTURA DE CAPTAÇÃO E INVESTIMENTO -->
         <section class="py-16 md:py-24 section-bg-pattern">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">4. Investimentos Necessários</h2>
-                    <p class="mt-2 text-gray-400">O que será construído para o renascimento da PLUR.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold">4. Estrutura de Captação e Investimento</h2>
+                    <p class="mt-2 text-gray-400">As bases financeiras para a construção da Nova PLUR.</p>
                 </div>
-                <div class="max-w-4xl mx-auto content-box p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed">
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-brand-green mb-2">Nova Estrutura Física:</h3>
-                            <ul class="list-disc list-inside">
-                                <li><b>Piso Superior:</b> Nova área de musculação e treinamentos específicos para esportes (futevôlei, skate, etc.).</li>
-                                <li><b>Piso Inferior:</b> Parte ergométrica para o CrossFit.</li>
-                                <li><b>Novos Banheiros:</b> Modernos e inclusivos.</li>
-                                <li><b>Lanchonete e Área de Convivência:</b> Espaço para integração e bem-estar.</li>
-                                <li><b>Reforma Estética:</b> Melhorias no ambiente geral, mantendo a estrutura existente que é muito boa.</li>
-                            </ul>
+                
+                <!-- Accordion 1: Valuation e Captação -->
+                <div class="content-box max-w-6xl mx-auto rounded-lg shadow-lg mb-8">
+                    <details>
+                        <summary>
+                            <div>
+                                <h3 class="text-2xl font-bold">Valuation e Proposta para Sócios</h3>
+                                <p class="text-gray-400 mt-1">Clique para ver os detalhes da avaliação da empresa e a estrutura de entrada.</p>
+                            </div>
+                            <svg class="accordion-arrow w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </summary>
+                        <div class="accordion-content pt-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg">
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-green mb-4">Valuation Atual (2024):</h4>
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>Receita total real: R$ 335.348,36</li>
+                                        <li>Passivo total assumido: R$ 239.768,66</li>
+                                        <li>Valuation líquido: <span class="font-bold">R$ 430.928,06</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-green mb-4">Proposta de Entrada de Sócios Cotistas:</h4>
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>Venda de 40% das quotas sociais: <span class="font-bold">R$ 172.371,22</span></li>
+                                        <li><b>Aporte previsto de dois sócios cotistas:</b> Aprox. R$ 70.000,00 cada.</li>
+                                        <li><b>Captação via Fomento:</b> A diferença será buscada via FCO, Go Fomento, etc.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-brand-green mb-2">Estimativa de Custos para Construção:</h3>
-                            <ul class="list-disc list-inside">
-                                <li><b>Musculação (Piso Superior):</b> R\$ 70.000 (usado) - R\$ 130.000 (novo)</li>
-                                <li><b>Ergométrica (Piso Inferior):</b> R\$ 60.000</li>
-                                <li><b>Banheiros:</b> R\$ 60.000</li>
-                                <li><b>Reforma Estética:</b> R\$ 40.000</li>
-                                <li><b>Total Estimado para Estrutura (cenário econômico):</b> R\$ 170.000</li>
-                                <li><b>Total Estimado para Estrutura (cenário premium):</b> R\$ 290.000</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-brand-green mb-2">Investimento em Marketing e Eventos:</h3>
-                            <ul class="list-disc list-inside">
-                                <li>Campanhas internas (gerando descontos e engajamento).</li>
-                                <li>Marketing digital (explorando depoimentos e prova social).</li>
-                                <li>Eventos e participação em clubes (ALT Running Club, etc.).</li>
-                            </ul>
-                            <p class="mt-2 italic">"Não começamos ganhando dinheiro, começamos investindo nesse movimento."</p>
-                        </div>
-                    </div>
+                    </details>
                 </div>
-            </div>
-        </section>
 
-        <!-- SEÇÃO ESTRUTURA DE CAPTAÇÃO -->
-        <section class="py-16 md:py-24 bg-brand-dark">
-            <div class="container mx-auto px-4 md:px-16 fade-in">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">5. Estrutura de Captação e Valuation</h2>
-                    <p class="mt-2 text-gray-400">A base financeira para o nosso crescimento exponencial.</p>
-                </div>
-                <div class="max-w-4xl mx-auto content-box p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="text-2xl font-bold text-brand-green mb-4">Valuation Atual (2024):</h3>
-                            <ul class="list-disc list-inside space-y-2">
-                                <li>Receita total real: R\$ 335.348,36</li>
-                                <li>Passivo total assumido: R\$ 239.768,66</li>
-                                <li>Valuation líquido: <span class="font-bold">R\$ 430.928,06</span></li>
-                            </ul>
+                <!-- Accordion 2: Detalhamento do Financiamento -->
+                <div class="content-box max-w-6xl mx-auto rounded-lg shadow-lg">
+                    <details>
+                        <summary>
+                            <div>
+                                <h3 class="text-2xl font-bold">Análise do Financiamento para Expansão</h3>
+                                <p class="text-gray-400 mt-1">Clique para ver o detalhamento de recursos para os cenários Econômico e Premium.</p>
+                            </div>
+                            <svg class="accordion-arrow w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </summary>
+                        <div class="accordion-content overflow-x-auto">
+                            <table class="min-w-full mt-6">
+                                <thead>
+                                    <tr>
+                                        <th class="rounded-tl-lg">Item de Investimento</th>
+                                        <th>Cenário Econômico (Equip. Usados)</th>
+                                        <th class="rounded-tr-lg">Cenário Premium (Equip. Novos)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-gray-800/50"><td colspan="3" class="font-bold text-gray-300">1. Equipamentos de Academia</td></tr>
+                                    <tr><td>Musculação (Piso Superior)</td><td>R$ 80.000</td><td class="premium-column">R$ 160.000</td></tr>
+                                    <tr><td>Ergométricos (Piso Inferior)</td><td>R$ 35.000</td><td class="premium-column">R$ 60.000</td></tr>
+                                    <tr class="bg-gray-800/50"><td colspan="3" class="font-bold text-gray-300">2. Obras, Reforma e Modernização</td></tr>
+                                    <tr><td>Banheiros e Vestiários Completos</td><td>R$ 60.000</td><td class="premium-column">R$ 60.000</td></tr>
+                                    <tr><td>Reforma Estética Geral</td><td>R$ 40.000</td><td class="premium-column">R$ 40.000</td></tr>
+                                    <tr><td>Lanchonete / Snack Bar</td><td>R$ 25.000</td><td class="premium-column">R$ 25.000</td></tr>
+                                    <tr><td>Ambiente Lounge / Convivência</td><td>R$ 15.000</td><td class="premium-column">R$ 20.000</td></tr>
+                                    <tr class="bg-gray-800/50"><td colspan="3" class="font-bold text-gray-300">3. Tecnologia, Software e Marketing</td></tr>
+                                    <tr><td>Tecnologia / App / IA (Setup e 1º ano)</td><td>R$ 18.000</td><td class="premium-column">R$ 25.000</td></tr>
+                                    <tr><td>Marketing e Lançamento (3 meses)</td><td>R$ 12.000</td><td class="premium-column">R$ 20.000</td></tr>
+                                    <tr class="font-semibold bg-gray-800"><td>Subtotal (Estrutura + Lançamento)</td><td>R$ 285.000</td><td class="premium-column">R$ 410.000</td></tr>
+                                    <tr class="bg-gray-800/50"><td colspan="3" class="font-bold text-gray-300">4. Margem de Segurança</td></tr>
+                                    <tr><td>Capital de Giro (Reserva p/ 3 meses)</td><td>R$ 60.000</td><td class="premium-column">R$ 75.000</td></tr>
+                                    <tr class="total-row"><td class="rounded-bl-lg">TOTAL FINANCIAMENTO RECOMENDADO</td><td>R$ 345.000</td><td class="premium-column rounded-br-lg">R$ 485.000</td></tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-brand-green mb-4">Proposta de Entrada de Sócios Cotistas:</h3>
-                            <ul class="list-disc list-inside space-y-2">
-                                <li>Venda de 40% das quotas sociais: <span class="font-bold">R\$ 172.371,22</span></li>
-                                <li><b>Aporte previsto de dois sócios cotistas:</b> Aproximadamente R\$ 70.000,00 cada (Total: R\$ 140.000,00).</li>
-                                <li><b>Investimento a ser captado via Fomento:</b> A diferença entre o investimento total necessário e os aportes dos sócios cotistas será buscada via FCO, Go Fomento e outras estruturas de financiamento governamentais (estaduais e federais) para este tipo de investimento.</li>
-                            </ul>
-                        </div>
-                    </div>
+                    </details>
                 </div>
+                
+                <!-- Accordion 3: Projeções Financeiras -->
+                <div class="content-box max-w-6xl mx-auto rounded-lg shadow-lg mt-8">
+                    <details>
+                        <summary>
+                            <div>
+                                <h3 class="text-2xl font-bold">Projeções Financeiras e Potencial de Retorno</h3>
+                                <p class="text-gray-400 mt-1">Clique para ver a análise de receitas, despesas e lucratividade.</p>
+                            </div>
+                            <svg class="accordion-arrow w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </summary>
+                        <div class="accordion-content pt-6 text-lg">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-green mb-4">Projeção de Ganhos (Ano 1)</h4>
+                                    <ul class="space-y-2">
+                                        <li><b>Receita Total Mensal:</b> R$ 72.080</li>
+                                        <li><b>Despesas Operacionais:</b> R$ 39.000</li>
+                                        <li><b>Parcela Financiamento:</b> R$ 12.000</li>
+                                        <li class="font-bold text-white">Lucro Líquido Mensal: <span class="text-brand-green">R$ 21.080</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-brand-green mb-4">Projeção de Ganhos (Ano 2)</h4>
+                                    <ul class="space-y-2">
+                                        <li><b>Receita Total Mensal:</b> R$ 100.900</li>
+                                        <li><b>Despesas Operacionais:</b> R$ 55.500</li>
+                                        <li><b>Parcela Financiamento:</b> R$ 12.000</li>
+                                        <li class="font-bold text-white">Lucro Líquido Mensal: <span class="text-brand-green">R$ 33.400</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-8 p-6 bg-blue-900/20 rounded-lg border border-blue-500/30">
+                                <h4 class="font-bold text-xl text-blue-300 mb-2">Valorização e Payback</h4>
+                                <p class="text-blue-400">Com um lucro anual projetado de <b>R$ 400.800</b> no segundo ano, o valuation da empresa pode atingir <b>R$ 801.600</b>. O payback do financiamento (cenário premium) é estimado em <b>14,5 meses</b>, demonstrando a alta viabilidade e o potencial de retorno do investimento.</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
             </div>
         </section>
 
         <!-- SEÇÃO O AMPARO DA LIVE CONSULTORIA -->
-        <section class="py-16 md:py-24 section-bg-pattern">
+        <section class="py-16 md:py-24 bg-brand-dark">
             <div class="container mx-auto px-4 md:px-16 fade-in">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">6. O Amparo e Colaboração da Live Consultoria</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold">5. O Amparo e Colaboração da Live Consultoria</h2>
                     <p class="mt-2 text-gray-400">Segurança e expertise para o seu investimento em todos os setores.</p>
                 </div>
                 <div class="max-w-3xl mx-auto content-box p-8 rounded-lg shadow-lg text-lg text-gray-300 leading-relaxed font-brand-secondary italic border-l-4 border-brand-green">
                     <p>A Live Consultoria, com sua vasta experiência em planejamento e estruturação de negócios, atuará de forma colaborativa e estratégica em <b>todos os setores da PLUR</b>, garantindo o embasamento e a segurança necessários para o sucesso do projeto. Nosso amparo abrange:</p>
                     <ul class="list-disc list-inside mt-4">
-                        <li><b>Fluxo e Operações:</b> Otimização e padronização de processos em todas as áreas (financeiro, atendimento, vendas, etc.).</li>
-                        <li><b>Gestão Financeira:</b> Estruturação completa, controle de fluxo de caixa, precificação, e busca por fontes de fomento (FCO, Go Fomento, etc.).</li>
-                        <li><b>Estratégia e Marketing:</b> Direcionamento para o posicionamento de marca, campanhas internas e digitais, e gestão de eventos.</li>
-                        <li><b>Liderança e Pessoas:</b> Desenvolvimento da equipe, mentoria para os líderes e estruturação de perfis de acesso.</li>
-                        <li><b>Tecnologia e Inovação:</b> Apoio na implementação de sistemas (ERP/CRM), desenvolvimento de aplicativos e integração de IA.</li>
+                        <li><b>Fluxo e Operações:</b> Otimização e padronização de processos em todas as áreas.</li>
+                        <li><b>Gestão Financeira:</b> Estruturação completa, controle de fluxo de caixa, e busca por fontes de fomento.</li>
+                        <li><b>Estratégia e Marketing:</b> Direcionamento para o posicionamento de marca e gestão de eventos.</li>
+                        <li><b>Liderança e Pessoas:</b> Desenvolvimento da equipe e mentoria para os líderes.</li>
+                        <li><b>Tecnologia e Inovação:</b> Apoio na implementação de sistemas e integração de IA.</li>
                     </ul>
                     <p class="mt-4">Com a Live ao seu lado, a PLUR terá um parceiro experiente e dedicado para guiar cada passo da transformação, elevando o padrão de gestão e performance em todas as frentes.</p>
                 </div>
@@ -330,7 +436,7 @@
         </section>
 
         <!-- SEÇÃO PRÓXIMOS PASSOS / CTA -->
-        <section class="cta-gradient py-24 text-center">
+        <section class="hero-gradient py-24 text-center">
             <div class="container mx-auto px-4 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold">Pronto para Construir o Futuro?</h2>
                 <p class="mt-4 max-w-2xl mx-auto text-gray-300">Este é o momento de fazer parte de um movimento que transformará vidas e o cenário de saúde em Goiânia.</p>
